@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+    
+    <!--  
+    <bean id="user" class="com.syx.ioc.UserDao">
+        <property name="name" value="syx"></property>
+        <property name="password" value="1234"></property>
+    </bean>
+    -->
+    <!-- 
+    <bean id="user" class="com.syx.ioc.UserDao">
+        <constructor-arg name="name" value="wang"/>
+        <constructor-arg name="password" value="8888"/>
+    </bean>
+     -->
+    <bean id="user" class="com.syx.ioc.UserDao">
+        <constructor-arg index="0" value="xiao"/>
+        <constructor-arg index="1" value="9999"/>
+    </bean>
+    
+    <bean id="userService" class="com.syx.ioc.UserServiceImpl" scope="prototype"  >
+       <property name="name" value="meie"></property>
+       <property name="userDao" ref="user"></property>
+    </bean>
+    
+</beans>
